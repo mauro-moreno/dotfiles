@@ -17,7 +17,8 @@ set $mod Mod4
 exec --no-startup-id picom &
 exec --no-startup-id feh --bg-scale ~/backgrounds/nice-blue-background.png
 exec --no-startup-id xrdb -merge ~/.Xresources
-exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+# exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+exec_always --no-startup-id xmodmap -e "keycode 66 = Escape"
 
 # kill any hanging polybar processes
 exec_always killall polybar
@@ -132,7 +133,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10: Slack"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -160,6 +161,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 assign [class="firefox"] $ws1
 assign [class="Alacritty"] $ws2
+assign [class="Slack"] $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

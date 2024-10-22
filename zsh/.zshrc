@@ -102,7 +102,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+bindkey -v
 setxkbmap -option caps:swapescape
+
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
 eval "$(starship init zsh)"
