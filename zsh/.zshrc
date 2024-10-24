@@ -102,8 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-bindkey -v
-setxkbmap -option caps:swapescape
+alias vim="nvim"
 
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
@@ -119,3 +118,6 @@ copyClipboard() {
 }
 
 alias cpc=copyClipboard
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+neofetch
