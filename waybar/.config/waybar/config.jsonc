@@ -2,10 +2,25 @@
   "position": "top",
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
-  "modules-right": ["network", "pulseaudio", "battery", "clock"],
+  "modules-right": ["network", "pulseaudio", "battery", "clock", "tray"],
+  "hyprland/workspaces": {
+    "format": "{icon} {name}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+    },
+  },
   "clock": {
     "timezone": "America/Argentina/Cordoba",
-    "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
+    "format": " {:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
   },
   "battery": {
@@ -24,18 +39,21 @@
     "tooltip-format": "{time}",
   },
   "network": {
-    "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
-    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰈀  </span> Online",
+    "format-wifi": "<span>  </span>{essid}",
+    "format-ethernet": "󰈀 Online",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
+    "format-disconnected": " Disconnected",
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}%",
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-muted": "",
+    "format": "{icon} {volume}",
+    "format-muted": "",
     "format-icons": {
       "default": ["", "", " "],
     },
     "on-click": "pavucontrol",
+  },
+  "tray": {
+    "icon-size": 16,
   },
 }

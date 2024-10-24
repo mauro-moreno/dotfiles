@@ -15,11 +15,12 @@
 element-text, element-icon , mode-switcher {
     background-color: inherit;
     text-color:       inherit;
+    cursor: pointer;
 }
 
 window {
     height: 360px;
-    border: 3px;
+    border: 2px;
     border-color: @border-col;
     background-color: @bg-col;
     border-radius: 15px;
@@ -35,6 +36,7 @@ inputbar {
     border-radius: 5px;
     padding: 2px;
     margin-right: 16px;
+    cursor: text;
 }
 
 prompt {
@@ -98,12 +100,14 @@ button {
     text-color: @fg-col;
     vertical-align: 0.5; 
     horizontal-align: 0.5;
+    cursor: pointer;
 }
 
 button selected {
   border: 2px 0 0 0;
   border-color: @blue;
   text-color: @fg-col;
+  cursor: default;
 }
 
 message {
