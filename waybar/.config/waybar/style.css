@@ -83,3 +83,13 @@ button.active {
 #custom-vpn {
   color: @lavender;
 }
+
+tooltip {
+  border: 0.1rem solid;
+  border-color: @green;
+  background-color: rgba(30, 30, 46, 0.7);
+}
+
+tooltip label {
+  padding: 0.5rem 1rem;
+}

@@ -21,7 +21,7 @@
   "clock": {
     "timezone": "America/Argentina/Cordoba",
     "format": " {:%a %d %H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<span>{calendar}</span>",
   },
   "battery": {
     "states": {
@@ -43,6 +43,7 @@
     "format-ethernet": "󰈀 Online",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": " Disconnected",
+    "tooltip-format-ethernet": "{ifname} (No IP)",
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}%",
   },
   "pulseaudio": {
