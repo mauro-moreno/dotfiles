@@ -56,5 +56,6 @@
   },
   "tray": {
     "icon-size": 16,
+    "format-icons": "<span>{icon}</span>",
   },
 }

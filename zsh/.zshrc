@@ -120,4 +120,4 @@ copyClipboard() {
 alias cpc=copyClipboard
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-neofetch
+fastfetch -l ~/.face --logo-width 30 --logo-padding-top 7

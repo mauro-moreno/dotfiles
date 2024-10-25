@@ -46,42 +46,10 @@ button.active {
   border-bottom: 0.15rem solid;
 }
 
-#clock {
-  color: @maroon;
-  border-color: @maroon;
-}
-
-#clock.date {
-  color: @mauve;
-  border-color: @mauve;
-}
-
-#pulseaudio {
-  color: @blue;
-  border-color: @blue;
-}
-
-#network {
-  color: @yellow;
-  border-color: @yellow;
-}
-
-#idle_inhibitor {
-  margin-right: 12px;
-  color: @green;
-}
-
-#idle_inhibitor.activated {
-  color: @red;
-}
-
-#battery {
-  color: @green;
-  border-color: @green;
-}
-
-#custom-vpn {
-  color: @lavender;
+#tray > * > * {
+  opacity: 0.2;
+  padding: 0 0.2rem;
+  margin: 0 0.1rem;
 }
 
 tooltip {
