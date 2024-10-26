@@ -4,7 +4,7 @@
   "modules-center": ["hyprland/window"],
   "modules-right": ["network", "pulseaudio", "battery", "clock", "tray"],
   "hyprland/workspaces": {
-    "format": "{icon} {name}",
+    "format": "{icon}  {name}",
     "format-icons": {
       "1": "",
       "2": "",
@@ -20,7 +20,7 @@
   },
   "clock": {
     "timezone": "America/Argentina/Cordoba",
-    "format": " {:%a %d %H:%M}",
+    "format": "   {:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<span>{calendar}</span>",
   },
   "battery": {
@@ -40,14 +40,14 @@
   },
   "network": {
     "format-wifi": "<span>  </span>{essid}",
-    "format-ethernet": "󰈀 Online",
+    "format-ethernet": "󰈀  Online",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": " Disconnected",
+    "format-disconnected": "  Disconnected",
     "tooltip-format-ethernet": "{ifname} (No IP)",
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}%",
   },
   "pulseaudio": {
-    "format": "{icon} {volume}",
+    "format": "{icon}  {volume}",
     "format-muted": "",
     "format-icons": {
       "default": ["", "", " "],
