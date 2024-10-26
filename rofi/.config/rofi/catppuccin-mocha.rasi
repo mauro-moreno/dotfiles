@@ -9,7 +9,7 @@
     fg-col2: #f38ba8;
     grey: #6c7086;
     width: 600;
-    font: "RobotoMono Nerd Font 12";
+    font: "Roboto 12";
 }
 
 element-text, element-icon , mode-switcher {
@@ -42,7 +42,7 @@ inputbar {
 prompt {
     border: 2px solid;
     border-color: @blue;
-    padding: 3px;
+    padding: 4px 10px;
     background-color: @bg-transparent; 
     text-color: @fg-col;
     border-radius: 3px;
