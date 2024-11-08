@@ -106,6 +106,7 @@ alias vim="nvim"
 
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
+export PATH=$PATH:/home/mmoreno/.local/bin
 eval "$(starship init zsh)"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -114,10 +115,10 @@ alias afk="systemctl suspend"
 alias weather="curl v2.wttr.in"
 
 copyClipboard() {
-  cat $1 | xclip -selection clipboard
+  cat $1 | wclipboard
 }
 
 alias cpc=copyClipboard
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-fastfetch -l ~/.face --logo-width 30 --logo-padding-top 7
+fastfetch -l ~/face.png --logo-width 30 --logo-padding-top 7
