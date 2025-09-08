@@ -105,6 +105,7 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH="/snap/bin:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=$PATH:/home/mmoreno/.local/bin
 export PATH="$PATH:/home/mmoreno/.config/composer/vendor/bin"
@@ -122,4 +123,6 @@ copyClipboard() {
 
 alias cpc=copyClipboard
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias t="~/.local/scripts/tmux-sessionizer"
 
