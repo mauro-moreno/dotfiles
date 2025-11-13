@@ -1,0 +1,6 @@
+[ERROR Thu Nov 13 15:47:12 2025] ...l/share/nvim/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"intelephense\"".
+[ERROR Thu Nov 13 15:47:12 2025] ...l/share/nvim/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"vue-language-server\"".
+[ERROR Thu Nov 13 15:47:12 2025] ...l/share/nvim/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"typescript-language-server\"".
+[ERROR Thu Nov 13 15:47:12 2025] ...l/share/nvim/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"tailwindcss-language-server\"".
+[ERROR Thu Nov 13 15:47:12 2025] ...l/share/nvim/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"json-lsp\"".
+[ERROR Thu Nov 13 15:47:12 2025] ...l/share/nvim/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"lua-language-server\"".
