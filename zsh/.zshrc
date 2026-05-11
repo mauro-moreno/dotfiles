@@ -126,3 +126,18 @@ alias cpc=copyClipboard
 
 alias t="~/.local/scripts/tmux-sessionizer"
 
+export PATH="$HOME/.local/bin:$PATH"
+
+if [[ "$TERM_PROGRAM" == "ghostty" ]]; then
+  export TERM=xterm-256color
+fi
+
+# opencode
+export PATH=/home/desarrollo/.opencode/bin:$PATH
+
+# bun completions
+[ -s "/home/desarrollo/.bun/_bun" ] && source "/home/desarrollo/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

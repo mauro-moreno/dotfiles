@@ -5,9 +5,6 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
---Map leader keys
-vim.g.mapleader = " "
-
 -- Increment/decrement
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
