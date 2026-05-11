@@ -107,8 +107,8 @@ alias vim="nvim"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH="/snap/bin:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
-export PATH=$PATH:/home/mmoreno/.local/bin
-export PATH="$PATH:/home/mmoreno/.config/composer/vendor/bin"
+export PATH=$PATH:$HOME/.local/bin
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 export PATH="$HOME/.symfony5/bin:$PATH"
 eval "$(starship init zsh)"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -133,11 +133,22 @@ if [[ "$TERM_PROGRAM" == "ghostty" ]]; then
 fi
 
 # opencode
-export PATH=/home/desarrollo/.opencode/bin:$PATH
+export PATH=$HOME/.opencode/bin:$PATH
 
 # bun completions
-[ -s "/home/desarrollo/.bun/_bun" ] && source "/home/desarrollo/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('$HOME/.juliaup/bin' $path)
+export PATH
+# Tab completion for juliaup and julia channel selection
+[ -f "$HOME/.julia/juliaup/completions/zsh.zsh" ] && source "$HOME/.julia/juliaup/completions/zsh.zsh"
+
+# <<< juliaup initialize <<<
