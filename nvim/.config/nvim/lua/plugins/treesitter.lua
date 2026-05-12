@@ -2,10 +2,9 @@
 
 return {
   'nvim-treesitter/nvim-treesitter',
+  branch = 'master',
   event = 'VeryLazy',
-  build = function()
-    require('nvim-treesitter.install').update({ with_sync = true })
-  end,
+  build = ':TSUpdate',
   dependencies = {
     {
       'JoosepAlviste/nvim-ts-context-commentstring',
@@ -109,18 +108,7 @@ return {
     },
   },
   config = function (_, opts)
-    local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-
-    parser_config.blade = {
-      install_info = {
-        url = "https://github.com/EmranMR/tree-sitter-blade",
-        files = {"src/parser.c"},
-        branch = "main",
-        generate_require_npm = true,
-        generate_require_from_grammar = true,
-      },
-      filetype = "blade"
-    }
+    require('nvim-treesitter.install').prefer_git = true
 
     vim.filetype.add({
       pattern = {
