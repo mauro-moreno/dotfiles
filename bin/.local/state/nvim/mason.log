@@ -1,0 +1,36 @@
+[INFO  mar 12 may 2026 13:58:33] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=intelephense) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  mar 12 may 2026 13:58:33] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=vue-language-server) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  mar 12 may 2026 13:58:33] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=typescript-language-server) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  mar 12 may 2026 13:58:33] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=tailwindcss-language-server) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  mar 12 may 2026 13:58:33] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=json-lsp) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  mar 12 may 2026 13:58:33] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=lua-language-server) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  mar 12 may 2026 13:58:39] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=tailwindcss-language-server)
+[INFO  mar 12 may 2026 13:58:39] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=typescript-language-server)
+[INFO  mar 12 may 2026 13:58:40] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=lua-language-server)
+[INFO  mar 12 may 2026 13:58:43] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=json-lsp)
+[INFO  mar 12 may 2026 13:58:44] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=intelephense)
+[INFO  mar 12 may 2026 13:58:44] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=vue-language-server)

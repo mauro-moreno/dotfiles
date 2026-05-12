@@ -1,0 +1,10 @@
+{
+  "main": "../bindings/node/dtd",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tree-sitter generate",
+    "prestart": "tree-sitter build --wasm",
+    "start": "tree-sitter playground"
+  }
+}

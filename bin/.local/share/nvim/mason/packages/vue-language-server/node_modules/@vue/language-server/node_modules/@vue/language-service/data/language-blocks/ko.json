@@ -1,0 +1,201 @@
+{
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "template",
+      "attributes": [
+        {
+          "name": "src",
+          "description": {
+            "kind": "markdown",
+            "value": "`*.vue` 컴포넌트를 여러 파일로 분리하고 싶다면, `src` 속성을 사용하여 언어 블록에 외부 파일을 임포트할 수 있습니다:\n\n```vue\n<template src=\"./template.html\"></template>\n<style src=\"./style.css\"></style>\n<script src=\"./script.js\"></script>\n```\n\n`src` 임포트는 webpack 모듈 요청과 동일한 경로 해상 규칙을 따르므로 주의하세요:\n\n- 상대 경로는 `./`로 시작해야 합니다.\n- npm 의존성에서 리소스를 임포트할 수 있습니다:\n\n```vue\n<!-- 설치된 \"todomvc-app-css\" npm 패키지에서 파일 임포트 -->\n<style src=\"todomvc-app-css/index.css\" />\n```\n\n`src` 임포트는 커스텀 블록에도 사용할 수 있습니다. 예:\n\n```vue\n<unit-test src=\"./unit-test.js\">\n</unit-test>\n```\n\n:::warning 참고\n`src`에서 별칭을 사용할 때는 `~`로 시작하지 마세요. 그 뒤의 모든 것은 모듈 요청으로 해석됩니다. 즉, node 모듈 내부의 에셋을 참조할 수 있습니다:\n```vue\n<img src=\"~some-npm-package/foo.png\">\n```\n:::"
+          },
+          "references": "api/sfc-spec.html#src-imports"
+        },
+        {
+          "name": "lang",
+          "description": {
+            "kind": "markdown",
+            "value": "블록은 `lang` 속성을 사용하여 프리프로세서 언어를 선언할 수 있습니다. 가장 일반적인 예는 `<script>` 블록에서 TypeScript를 사용하는 경우입니다:\n\n```html\n<script lang=\"ts\">\n  // TypeScript 사용\n</script>\n```\n\n`lang`는 모든 블록에 적용할 수 있습니다. 예를 들어, [Sass](https://sass-lang.com/)를 사용하는 `<style>`과 [Pug](https://pugjs.org/api/getting-started.html)를 사용하는 `<template>`을 사용할 수 있습니다:\n\n```html\n<template lang=\"pug\">\np {{ msg }}\n</template>\n\n<style lang=\"scss\">\n  $primary-color: #333;\n  body {\n    color: $primary-color;\n  }\n</style>\n```\n\n다양한 프리프로세서와의 통합은 도구 체인에 따라 다를 수 있습니다. 예시는 각 문서를 참고하세요:\n\n- [Vite](https://vitejs.dev/guide/features.html#css-pre-processors)\n- [Vue CLI](https://cli.vuejs.org/guide/css.html#pre-processors)\n- [webpack + vue-loader](https://vue-loader.vuejs.org/guide/pre-processors.html#using-pre-processors)"
+          },
+          "values": [
+            {
+              "name": "html"
+            },
+            {
+              "name": "pug"
+            }
+          ],
+          "references": "api/sfc-spec.html#pre-processors"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "\n- 각 `*.vue` 파일에는 최상위 `<template>` 블록이 최대 한 개만 포함될 수 있습니다.\n\n- 내용은 추출되어 `@vue/compiler-dom`에 전달되고, JavaScript 렌더 함수로 사전 컴파일되어 내보내는 컴포넌트의 `render` 옵션에 연결됩니다.\n"
+      },
+      "references": "api/sfc-spec.html#template"
+    },
+    {
+      "name": "script",
+      "attributes": [
+        {
+          "name": "src",
+          "description": {
+            "kind": "markdown",
+            "value": "`*.vue` 컴포넌트를 여러 파일로 분리하고 싶다면, `src` 속성을 사용하여 언어 블록에 외부 파일을 임포트할 수 있습니다:\n\n```vue\n<template src=\"./template.html\"></template>\n<style src=\"./style.css\"></style>\n<script src=\"./script.js\"></script>\n```\n\n`src` 임포트는 webpack 모듈 요청과 동일한 경로 해상 규칙을 따르므로 주의하세요:\n\n- 상대 경로는 `./`로 시작해야 합니다.\n- npm 의존성에서 리소스를 임포트할 수 있습니다:\n\n```vue\n<!-- 설치된 \"todomvc-app-css\" npm 패키지에서 파일 임포트 -->\n<style src=\"todomvc-app-css/index.css\" />\n```\n\n`src` 임포트는 커스텀 블록에도 사용할 수 있습니다. 예:\n\n```vue\n<unit-test src=\"./unit-test.js\">\n</unit-test>\n```\n\n:::warning 참고\n`src`에서 별칭을 사용할 때는 `~`로 시작하지 마세요. 그 뒤의 모든 것은 모듈 요청으로 해석됩니다. 즉, node 모듈 내부의 에셋을 참조할 수 있습니다:\n```vue\n<img src=\"~some-npm-package/foo.png\">\n```\n:::"
+          },
+          "references": "api/sfc-spec.html#src-imports"
+        },
+        {
+          "name": "lang",
+          "description": {
+            "kind": "markdown",
+            "value": "블록은 `lang` 속성을 사용하여 프리프로세서 언어를 선언할 수 있습니다. 가장 일반적인 예는 `<script>` 블록에서 TypeScript를 사용하는 경우입니다:\n\n```html\n<script lang=\"ts\">\n  // TypeScript 사용\n</script>\n```\n\n`lang`는 모든 블록에 적용할 수 있습니다. 예를 들어, [Sass](https://sass-lang.com/)를 사용하는 `<style>`과 [Pug](https://pugjs.org/api/getting-started.html)를 사용하는 `<template>`을 사용할 수 있습니다:\n\n```html\n<template lang=\"pug\">\np {{ msg }}\n</template>\n\n<style lang=\"scss\">\n  $primary-color: #333;\n  body {\n    color: $primary-color;\n  }\n</style>\n```\n\n다양한 프리프로세서와의 통합은 도구 체인에 따라 다를 수 있습니다. 예시는 각 문서를 참고하세요:\n\n- [Vite](https://vitejs.dev/guide/features.html#css-pre-processors)\n- [Vue CLI](https://cli.vuejs.org/guide/css.html#pre-processors)\n- [webpack + vue-loader](https://vue-loader.vuejs.org/guide/pre-processors.html#using-pre-processors)"
+          },
+          "values": [
+            {
+              "name": "ts"
+            },
+            {
+              "name": "js"
+            },
+            {
+              "name": "tsx"
+            },
+            {
+              "name": "jsx"
+            }
+          ],
+          "references": "api/sfc-spec.html#pre-processors"
+        },
+        {
+          "name": "generic"
+        },
+        {
+          "name": "setup",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "\n- 각 `*.vue` 파일에는 `<script setup>` 블록이 최대 한 개만 포함될 수 있습니다(일반 `<script>`는 제외).\n\n- 이 스크립트는 사전 처리되어 컴포넌트의 `setup()` 함수로 사용되며, 즉 **컴포넌트의 각 인스턴스마다 실행**됩니다. `<script setup>`의 최상위 바인딩은 템플릿에 자동으로 노출됩니다. 자세한 내용은 [`<script setup>` 전용 문서](https://ko.vuejs.org/api/sfc-script-setup.html)를 참고하세요.\n"
+          },
+          "references": "api/sfc-spec.html#script-setup"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "\n- 각 `*.vue` 파일에는 `<script>` 블록이 최대 한 개만 포함될 수 있습니다([`<script setup>`](https://ko.vuejs.org/api/sfc-script-setup.html)은 제외).\n\n- 스크립트는 ES 모듈로 실행됩니다.\n\n- **기본 내보내기(default export)**는 Vue 컴포넌트 옵션 객체여야 하며, 일반 객체이거나 [defineComponent](https://ko.vuejs.org/api/general.html#definecomponent)의 반환값일 수 있습니다.\n"
+      },
+      "references": "api/sfc-spec.html#script"
+    },
+    {
+      "name": "script setup",
+      "attributes": [],
+      "description": {
+        "kind": "markdown",
+        "value": "\n- 각 `*.vue` 파일에는 `<script setup>` 블록이 최대 한 개만 포함될 수 있습니다(일반 `<script>`는 제외).\n\n- 이 스크립트는 사전 처리되어 컴포넌트의 `setup()` 함수로 사용되며, 즉 **컴포넌트의 각 인스턴스마다 실행**됩니다. `<script setup>`의 최상위 바인딩은 템플릿에 자동으로 노출됩니다. 자세한 내용은 [`<script setup>` 전용 문서](https://ko.vuejs.org/api/sfc-script-setup.html)를 참고하세요.\n"
+      },
+      "references": "api/sfc-spec.html#script-setup"
+    },
+    {
+      "name": "style",
+      "attributes": [
+        {
+          "name": "src",
+          "description": {
+            "kind": "markdown",
+            "value": "`*.vue` 컴포넌트를 여러 파일로 분리하고 싶다면, `src` 속성을 사용하여 언어 블록에 외부 파일을 임포트할 수 있습니다:\n\n```vue\n<template src=\"./template.html\"></template>\n<style src=\"./style.css\"></style>\n<script src=\"./script.js\"></script>\n```\n\n`src` 임포트는 webpack 모듈 요청과 동일한 경로 해상 규칙을 따르므로 주의하세요:\n\n- 상대 경로는 `./`로 시작해야 합니다.\n- npm 의존성에서 리소스를 임포트할 수 있습니다:\n\n```vue\n<!-- 설치된 \"todomvc-app-css\" npm 패키지에서 파일 임포트 -->\n<style src=\"todomvc-app-css/index.css\" />\n```\n\n`src` 임포트는 커스텀 블록에도 사용할 수 있습니다. 예:\n\n```vue\n<unit-test src=\"./unit-test.js\">\n</unit-test>\n```\n\n:::warning 참고\n`src`에서 별칭을 사용할 때는 `~`로 시작하지 마세요. 그 뒤의 모든 것은 모듈 요청으로 해석됩니다. 즉, node 모듈 내부의 에셋을 참조할 수 있습니다:\n```vue\n<img src=\"~some-npm-package/foo.png\">\n```\n:::"
+          },
+          "references": "api/sfc-spec.html#src-imports"
+        },
+        {
+          "name": "lang",
+          "description": {
+            "kind": "markdown",
+            "value": "블록은 `lang` 속성을 사용하여 프리프로세서 언어를 선언할 수 있습니다. 가장 일반적인 예는 `<script>` 블록에서 TypeScript를 사용하는 경우입니다:\n\n```html\n<script lang=\"ts\">\n  // TypeScript 사용\n</script>\n```\n\n`lang`는 모든 블록에 적용할 수 있습니다. 예를 들어, [Sass](https://sass-lang.com/)를 사용하는 `<style>`과 [Pug](https://pugjs.org/api/getting-started.html)를 사용하는 `<template>`을 사용할 수 있습니다:\n\n```html\n<template lang=\"pug\">\np {{ msg }}\n</template>\n\n<style lang=\"scss\">\n  $primary-color: #333;\n  body {\n    color: $primary-color;\n  }\n</style>\n```\n\n다양한 프리프로세서와의 통합은 도구 체인에 따라 다를 수 있습니다. 예시는 각 문서를 참고하세요:\n\n- [Vite](https://vitejs.dev/guide/features.html#css-pre-processors)\n- [Vue CLI](https://cli.vuejs.org/guide/css.html#pre-processors)\n- [webpack + vue-loader](https://vue-loader.vuejs.org/guide/pre-processors.html#using-pre-processors)"
+          },
+          "values": [
+            {
+              "name": "css"
+            },
+            {
+              "name": "scss"
+            },
+            {
+              "name": "less"
+            },
+            {
+              "name": "stylus"
+            },
+            {
+              "name": "postcss"
+            },
+            {
+              "name": "sass"
+            }
+          ],
+          "references": "api/sfc-spec.html#pre-processors"
+        },
+        {
+          "name": "scoped",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "`<style>` 태그에 `scoped` 속성이 있으면, 해당 CSS는 현재 컴포넌트의 요소에만 적용됩니다. 이는 Shadow DOM에서 볼 수 있는 스타일 캡슐화와 유사합니다. 몇 가지 주의사항이 있지만, 별도의 폴리필이 필요하지 않습니다. PostCSS를 사용하여 다음과 같이 변환함으로써 구현됩니다:\n\n```vue\n<style scoped>\n.example {\n  color: red;\n}\n</style>\n\n<template>\n  <div class=\"example\">hi</div>\n</template>\n```\n\n다음과 같이 변환됩니다:\n\n```vue\n<style>\n.example[data-v-f3f3eg9] {\n  color: red;\n}\n</style>\n\n<template>\n  <div class=\"example\" data-v-f3f3eg9>hi</div>\n</template>\n```\n\n### 자식 컴포넌트 루트 요소 \n\n`scoped`를 사용하면, 부모 컴포넌트의 스타일이 자식 컴포넌트로 누출되지 않습니다. 하지만, 자식 컴포넌트의 루트 노드는 부모의 scoped CSS와 자식의 scoped CSS 모두의 영향을 받습니다. 이는 부모가 레이아웃 목적으로 자식의 루트 요소를 스타일링할 수 있도록 의도된 동작입니다.\n\n### 딥 셀렉터 \n\n`scoped` 스타일에서 셀렉터가 \"딥\"하게, 즉 자식 컴포넌트에까지 영향을 미치게 하려면 `:deep()` 의사 클래스(pseudo-class)를 사용할 수 있습니다:\n\n```vue\n<style scoped>\n.a :deep(.b) {\n  /* ... */\n}\n</style>\n```\n\n위 코드는 다음과 같이 컴파일됩니다:\n\n```css\n.a[data-v-f3f3eg9] .b {\n  /* ... */\n}\n```\n\n:::tip\n`v-html`로 생성된 DOM 콘텐츠는 scoped 스타일의 영향을 받지 않지만, 딥 셀렉터를 사용하여 여전히 스타일링할 수 있습니다.\n:::\n\n### 슬롯 셀렉터 \n\n기본적으로, scoped 스타일은 `<slot/>`으로 렌더링된 콘텐츠에 영향을 주지 않습니다. 이는 해당 콘텐츠가 전달한 부모 컴포넌트의 소유로 간주되기 때문입니다. 슬롯 콘텐츠를 명시적으로 타겟팅하려면 `:slotted` 의사 클래스를 사용하세요:\n\n```vue\n<style scoped>\n:slotted(div) {\n  color: red;\n}\n</style>\n```\n\n### 글로벌 셀렉터 \n\n단일 규칙만 전역적으로 적용하고 싶다면, 별도의 `<style>`을 만들지 않고 `:global` 의사 클래스를 사용할 수 있습니다(아래 참고):\n\n```vue\n<style scoped>\n:global(.red) {\n  color: red;\n}\n</style>\n```\n\n### 로컬 및 글로벌 스타일 혼합 \n\n동일한 컴포넌트 내에서 scoped 스타일과 non-scoped 스타일을 모두 포함할 수도 있습니다:\n\n```vue\n<style>\n/* 글로벌 스타일 */\n</style>\n\n<style scoped>\n/* 로컬 스타일 */\n</style>\n```\n\n### Scoped 스타일 팁 \n\n- **Scoped 스타일이 클래스의 필요성을 없애지는 않습니다.** 브라우저가 다양한 CSS 셀렉터를 렌더링하는 방식 때문에, `p { color: red }`와 같은 셀렉터는 scoped(즉, 속성 셀렉터와 결합될 때)일 때 훨씬 느려집니다. 대신 `.example { color: red }`와 같이 클래스나 id를 사용하면 성능 저하를 사실상 없앨 수 있습니다.\n\n- **재귀 컴포넌트에서 자손 셀렉터를 사용할 때 주의하세요!** `.a .b`와 같은 셀렉터가 있는 CSS 규칙에서, `.a`에 해당하는 요소가 재귀 자식 컴포넌트를 포함하면, 해당 자식 컴포넌트 내의 모든 `.b`가 이 규칙에 의해 매칭됩니다."
+          },
+          "references": "api/sfc-css-features.html#scoped-css"
+        },
+        {
+          "name": "module",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "`<style module>` 태그는 [CSS Modules](https://github.com/css-modules/css-modules)로 컴파일되며, 결과 CSS 클래스가 `$style` 키 아래의 객체로 컴포넌트에 노출됩니다:\n\n```vue\n<template>\n  <p :class=\"$style.red\">This should be red</p>\n</template>\n\n<style module>\n.red {\n  color: red;\n}\n</style>\n```\n\n결과 클래스는 충돌을 방지하기 위해 해시 처리되어, CSS가 현재 컴포넌트에만 적용되는 것과 동일한 효과를 얻습니다.\n\n[CSS Modules 명세](https://github.com/css-modules/css-modules)에서 [글로벌 예외](https://github.com/css-modules/css-modules/blob/master/docs/composition.md#exceptions) 및 [컴포지션](https://github.com/css-modules/css-modules/blob/master/docs/composition.md#composition) 등 자세한 내용을 참고하세요.\n\n### 커스텀 주입 이름 \n\n`module` 속성에 값을 지정하여 주입된 클래스 객체의 프로퍼티 키를 커스터마이즈할 수 있습니다:\n\n```vue\n<template>\n  <p :class=\"classes.red\">red</p>\n</template>\n\n<style module=\"classes\">\n.red {\n  color: red;\n}\n</style>\n```\n\n### Composition API와 함께 사용하기 \n\n주입된 클래스는 `setup()` 및 `<script setup>`에서 `useCssModule` API를 통해 접근할 수 있습니다. 커스텀 주입 이름이 있는 `<style module>` 블록의 경우, `useCssModule`의 첫 번째 인자로 일치하는 `module` 속성 값을 전달합니다:\n\n```js\nimport { useCssModule } from 'vue'\n\n// setup() 범위 내에서...\n// 기본값, <style module>의 클래스를 반환\nuseCssModule()\n\n// 이름 지정, <style module=\"classes\">의 클래스를 반환\nuseCssModule('classes')\n```\n\n- **예시**\n\n```vue\n<script setup lang=\"ts\">\nimport { useCssModule } from 'vue'\n\nconst classes = useCssModule()\n</script>\n\n<template>\n  <p :class=\"classes.red\">red</p>\n</template>\n\n<style module>\n.red {\n  color: red;\n}\n</style>\n```"
+          },
+          "references": "api/sfc-css-features.html#css-modules"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "\n- 하나의 `*.vue` 파일에는 여러 개의 `<style>` 태그를 포함할 수 있습니다.\n\n- `<style>` 태그는 `scoped` 또는 `module` 속성(자세한 내용은 [SFC 스타일 기능](https://ko.vuejs.org/api/sfc-css-features.html) 참고)을 가질 수 있어, 스타일을 현재 컴포넌트에 캡슐화하는 데 도움이 됩니다. 서로 다른 캡슐화 모드를 가진 여러 `<style>` 태그를 하나의 컴포넌트에 혼합할 수 있습니다.\n"
+      },
+      "references": "api/sfc-spec.html#style"
+    },
+    {
+      "name": "커스텀 블록",
+      "attributes": [
+        {
+          "name": "src",
+          "description": {
+            "kind": "markdown",
+            "value": "`*.vue` 컴포넌트를 여러 파일로 분리하고 싶다면, `src` 속성을 사용하여 언어 블록에 외부 파일을 임포트할 수 있습니다:\n\n```vue\n<template src=\"./template.html\"></template>\n<style src=\"./style.css\"></style>\n<script src=\"./script.js\"></script>\n```\n\n`src` 임포트는 webpack 모듈 요청과 동일한 경로 해상 규칙을 따르므로 주의하세요:\n\n- 상대 경로는 `./`로 시작해야 합니다.\n- npm 의존성에서 리소스를 임포트할 수 있습니다:\n\n```vue\n<!-- 설치된 \"todomvc-app-css\" npm 패키지에서 파일 임포트 -->\n<style src=\"todomvc-app-css/index.css\" />\n```\n\n`src` 임포트는 커스텀 블록에도 사용할 수 있습니다. 예:\n\n```vue\n<unit-test src=\"./unit-test.js\">\n</unit-test>\n```\n\n:::warning 참고\n`src`에서 별칭을 사용할 때는 `~`로 시작하지 마세요. 그 뒤의 모든 것은 모듈 요청으로 해석됩니다. 즉, node 모듈 내부의 에셋을 참조할 수 있습니다:\n```vue\n<img src=\"~some-npm-package/foo.png\">\n```\n:::"
+          },
+          "references": "api/sfc-spec.html#src-imports"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "\n프로젝트별 필요에 따라 추가적인 커스텀 블록을 `*.vue` 파일에 포함할 수 있습니다. 예를 들어 `<docs>` 블록이 있습니다. 실제 커스텀 블록의 예시는 다음과 같습니다:\n\n- [Gridsome: `<page-query>`](https://gridsome.org/docs/querying-data/)\n- [vite-plugin-vue-gql: `<gql>`](https://github.com/wheatjs/vite-plugin-vue-gql)\n- [vue-i18n: `<i18n>`](https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n#i18n-custom-block)\n\n커스텀 블록의 처리는 도구에 따라 달라집니다. 커스텀 블록 통합을 직접 구축하고 싶다면 [SFC 커스텀 블록 통합 도구 섹션](https://ko.vuejs.org/guide/scaling-up/tooling.html#sfc-custom-block-integrations)을 참고하세요.\n"
+      },
+      "references": "api/sfc-spec.html#커스텀-블록"
+    }
+  ],
+  "globalAttributes": [
+    {
+      "name": "lang",
+      "description": {
+        "kind": "markdown",
+        "value": "블록은 `lang` 속성을 사용하여 프리프로세서 언어를 선언할 수 있습니다. 가장 일반적인 예는 `<script>` 블록에서 TypeScript를 사용하는 경우입니다:\n\n```html\n<script lang=\"ts\">\n  // TypeScript 사용\n</script>\n```\n\n`lang`는 모든 블록에 적용할 수 있습니다. 예를 들어, [Sass](https://sass-lang.com/)를 사용하는 `<style>`과 [Pug](https://pugjs.org/api/getting-started.html)를 사용하는 `<template>`을 사용할 수 있습니다:\n\n```html\n<template lang=\"pug\">\np {{ msg }}\n</template>\n\n<style lang=\"scss\">\n  $primary-color: #333;\n  body {\n    color: $primary-color;\n  }\n</style>\n```\n\n다양한 프리프로세서와의 통합은 도구 체인에 따라 다를 수 있습니다. 예시는 각 문서를 참고하세요:\n\n- [Vite](https://vitejs.dev/guide/features.html#css-pre-processors)\n- [Vue CLI](https://cli.vuejs.org/guide/css.html#pre-processors)\n- [webpack + vue-loader](https://vue-loader.vuejs.org/guide/pre-processors.html#using-pre-processors)"
+      },
+      "values": [],
+      "references": "api/sfc-spec.html#pre-processors"
+    },
+    {
+      "name": "src",
+      "description": {
+        "kind": "markdown",
+        "value": "`*.vue` 컴포넌트를 여러 파일로 분리하고 싶다면, `src` 속성을 사용하여 언어 블록에 외부 파일을 임포트할 수 있습니다:\n\n```vue\n<template src=\"./template.html\"></template>\n<style src=\"./style.css\"></style>\n<script src=\"./script.js\"></script>\n```\n\n`src` 임포트는 webpack 모듈 요청과 동일한 경로 해상 규칙을 따르므로 주의하세요:\n\n- 상대 경로는 `./`로 시작해야 합니다.\n- npm 의존성에서 리소스를 임포트할 수 있습니다:\n\n```vue\n<!-- 설치된 \"todomvc-app-css\" npm 패키지에서 파일 임포트 -->\n<style src=\"todomvc-app-css/index.css\" />\n```\n\n`src` 임포트는 커스텀 블록에도 사용할 수 있습니다. 예:\n\n```vue\n<unit-test src=\"./unit-test.js\">\n</unit-test>\n```\n\n:::warning 참고\n`src`에서 별칭을 사용할 때는 `~`로 시작하지 마세요. 그 뒤의 모든 것은 모듈 요청으로 해석됩니다. 즉, node 모듈 내부의 에셋을 참조할 수 있습니다:\n```vue\n<img src=\"~some-npm-package/foo.png\">\n```\n:::"
+      },
+      "references": "api/sfc-spec.html#src-imports"
+    }
+  ]
+}

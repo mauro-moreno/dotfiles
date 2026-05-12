@@ -1,0 +1,119 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.inferComponentType = inferComponentType;
+exports.inferComponentProps = inferComponentProps;
+exports.inferComponentSlots = inferComponentSlots;
+exports.inferComponentEmit = inferComponentEmit;
+exports.inferComponentExposed = inferComponentExposed;
+function inferComponentType(componentType) {
+    const constructSignatures = componentType.getConstructSignatures();
+    const callSignatures = componentType.getCallSignatures();
+    for (const _sig of constructSignatures) {
+        return 1;
+    }
+    for (const _sig of callSignatures) {
+        return 2;
+    }
+}
+function inferComponentProps(typeChecker, componentType) {
+    const constructSignatures = componentType.getConstructSignatures();
+    const callSignatures = componentType.getCallSignatures();
+    for (const sig of constructSignatures) {
+        const retType = sig.getReturnType();
+        const props = findProperty(typeChecker, retType, '$props');
+        if (props) {
+            return props;
+        }
+    }
+    for (const sig of callSignatures) {
+        if (sig.parameters.length > 0) {
+            const props = sig.parameters[0];
+            if (props) {
+                return typeChecker.getTypeOfSymbol(props);
+            }
+        }
+    }
+}
+function inferComponentSlots(typeChecker, componentType) {
+    const constructSignatures = componentType.getConstructSignatures();
+    const callSignatures = componentType.getCallSignatures();
+    for (const sig of constructSignatures) {
+        const retType = sig.getReturnType();
+        const slots = findProperty(typeChecker, retType, '$slots');
+        if (slots) {
+            return slots;
+        }
+    }
+    for (const sig of callSignatures) {
+        if (sig.parameters.length > 1) {
+            const ctxParam = sig.parameters[1];
+            if (ctxParam) {
+                const ctxType = typeChecker.getTypeOfSymbol(ctxParam);
+                const slots = findProperty(typeChecker, ctxType, 'slots');
+                if (slots) {
+                    return slots;
+                }
+            }
+        }
+    }
+}
+function inferComponentEmit(typeChecker, componentType) {
+    const constructSignatures = componentType.getConstructSignatures();
+    const callSignatures = componentType.getCallSignatures();
+    for (const sig of constructSignatures) {
+        const retType = sig.getReturnType();
+        const emit = findProperty(typeChecker, retType, '$emit');
+        if (emit) {
+            return emit;
+        }
+    }
+    for (const sig of callSignatures) {
+        if (sig.parameters.length > 1) {
+            const ctxParam = sig.parameters[1];
+            if (ctxParam) {
+                const ctxType = typeChecker.getTypeOfSymbol(ctxParam);
+                const emitType = findProperty(typeChecker, ctxType, 'emit');
+                if (emitType) {
+                    return emitType;
+                }
+            }
+        }
+    }
+}
+function inferComponentExposed(typeChecker, componentType) {
+    const constructSignatures = componentType.getConstructSignatures();
+    const callSignatures = componentType.getCallSignatures();
+    for (const sig of constructSignatures) {
+        return sig.getReturnType();
+    }
+    for (const sig of callSignatures) {
+        if (sig.parameters.length > 2) {
+            const exposeParam = sig.parameters[2];
+            if (exposeParam) {
+                const exposeType = typeChecker.getTypeOfSymbol(exposeParam);
+                const callSignatures = exposeType.getCallSignatures();
+                for (const callSig of callSignatures) {
+                    const params = callSig.getParameters();
+                    if (params.length > 0) {
+                        return typeChecker.getTypeOfSymbol(params[0]);
+                    }
+                }
+            }
+        }
+    }
+}
+function findProperty(typeChecker, type, property) {
+    const symbol = type.getProperty(property);
+    if (symbol) {
+        return typeChecker.getTypeOfSymbol(symbol);
+    }
+    if (type.isUnionOrIntersection()) {
+        for (const sub of type.types) {
+            const found = findProperty(typeChecker, sub, property);
+            if (found) {
+                return found;
+            }
+        }
+    }
+}
+//# sourceMappingURL=helpers.js.map
